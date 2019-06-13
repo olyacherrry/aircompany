@@ -1,41 +1,40 @@
-package Planes;
+package planes;
 
 import java.util.Objects;
 
 abstract public class Plane {
-    String model;
+    String modelName;
     private int maxSpeed;
     private int maxFlightDistance;
     private int maxLoadCapacity;
 
-    public Plane(String model, int maxSpeed, int maxFlightDistance, int maxLoadCapacity) {
-        this.model = model;
+    public Plane(String modelName, int maxSpeed, int maxFlightDistance, int maxLoadCapacity) {
+        this.modelName = modelName;
         this.maxSpeed = maxSpeed;
         this.maxFlightDistance = maxFlightDistance;
         this.maxLoadCapacity = maxLoadCapacity;
     }
 
-    public String getModel() {
-        return model;
+    public String getModelName() {
+        return modelName;
     }
 
     public int getMS() {
         return maxSpeed;
     }
 
-    public int Get_Max_Flight_Distance() {
+    public int getMaxFlightDistance() {
         return maxFlightDistance;
     }
 
-    public int getMinLoadCapacity() {
-        int result = this.maxLoadCapacity;
-        return result;
+    public int getMaxLoadCapacity() {
+        return maxLoadCapacity;
     }
 
     @Override
     public String toString() {
         return "Plane{" +
-                "model='" + model + '\'' +
+                "modelName='" + modelName + '\'' +
                 ", maxSpeed=" + maxSpeed +
                 ", maxFlightDistance=" + maxFlightDistance +
                 ", maxLoadCapacity=" + maxLoadCapacity +
@@ -50,11 +49,11 @@ abstract public class Plane {
         return maxSpeed == plane.maxSpeed &&
                 maxFlightDistance == plane.maxFlightDistance &&
                 maxLoadCapacity == plane.maxLoadCapacity &&
-                Objects.equals(model, plane.model);
+                Objects.equals(modelName, plane.modelName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(model, maxSpeed, maxFlightDistance, maxLoadCapacity);
+        return Objects.hash(modelName, maxSpeed, maxFlightDistance, maxLoadCapacity);
     }
 }
